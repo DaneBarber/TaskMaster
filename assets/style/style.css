@@ -1,1 +1,11 @@
 /* BASIC STYLES HERE */
+
+.fuchsia {
+  background-color: #66063c;
+  color: #ffffff;
+  width: 100%;
+}
+
+.tasklist {
+  background-color: #ffffff;
+}
