@@ -14,8 +14,12 @@ export class TasksController {
     _draw()
   }
 
-  remove() {
-    tasksService.remove()
+  remove(id) {
+    tasksService.remove(id)
+  }
+
+  add(text, listId) {
+    tasksService.add(text, listId)
   }
 }
 

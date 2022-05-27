@@ -1,4 +1,5 @@
 import { ProxyState } from "../AppState.js";
+import { listsService } from "../Services/ListsService.js";
 
 // Private
 
@@ -13,5 +14,11 @@ export class ListsController {
     _draw()
   }
 
+  remove(id) {
+    listsService.remove(id)
+  }
 
+  add(title, color) {
+    listsService.add(title, color)
+  }
 }
