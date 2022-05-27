@@ -1,4 +1,11 @@
 import { tasksService } from "../Services/TasksService.js";
+import { ProxyState } from "../AppState.js";
+
+// Private
+
+function _draw() {
+  //draw stuff
+}
 
 //Public
 export class TasksController {
