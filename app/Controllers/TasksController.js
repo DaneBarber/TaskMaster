@@ -1,3 +1,5 @@
+import { tasksService } from "../Services/TasksService.js";
+
 //Public
 export class TasksController {
   constructor() {
@@ -5,6 +7,8 @@ export class TasksController {
     _draw()
   }
 
-
+  remove() {
+    tasksService.remove()
+  }
 }
 
