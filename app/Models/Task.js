@@ -1,20 +1,28 @@
+import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/generateId.js"
 
 export class Task {
   constructor(data) {
-    this.id = generateId()
+    this.taskId = data.taskId || generateId()
     this.listId = data.listId
-    this.title = data.title
-    this.checked = data.checked
-    this.color = data.color
+    this.taskName = data.taskName
+    this.taskChecked = data.taskChecked
   }
+  get Tasks() {
+    let tasks = ProxyState.tasks.filter(t => t.listId == this.taskId)
+    let template = ''
+    tasks.forEach(t => template += t.Template)
+    return template
+  }
+  get Template() {
 
-  get template() {
-    return `
-    <p class="d-flex justify-content-between" style="${this.color}"> <span> ${this.title}</span><span></span>
-    <i class="mdi mdi-delete selectable px-3" onclick="app.itemsController.remove('${this.id}')"></i>
-    </p>
+    return /*html*/`
+          <li>
+            <span><input  type="checkbox" class="p-1" ${this.taskChecked == "true" ? "checked" : ""}> ${this.taskName}</span>
+            <span class="mdi mdi-trash-can-outline text-danger" onclick="app.tasksController.deleteTask('${this.taskId}')"></span>
+          </li>
     `
+
   }
 
 
