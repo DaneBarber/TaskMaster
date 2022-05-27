@@ -11,13 +11,6 @@ export class List {
       throw new Error("Each list needs a name and a color before it can be created");
   }
 
-  get Tasks() {
-    let tasks = ProxyState.tasks.filter(t => t.listId == this.listId)
-    let template = ''
-    tasks.forEach(t => template += t.Template)
-    return template
-  }
-
   get Template() {
 
     let chosenColor = 'bg-'
@@ -67,5 +60,12 @@ export class List {
                   </div>
                 </div>
     `
+  }
+
+  get Tasks() {
+    let tasks = ProxyState.tasks.filter(t => t.listId == this.listId)
+    let template = ''
+    tasks.forEach(t => template += t.Template)
+    return template
   }
 }

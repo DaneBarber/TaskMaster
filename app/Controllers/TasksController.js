@@ -18,8 +18,18 @@ export class TasksController {
     tasksService.remove(id)
   }
 
-  add(text, listId) {
-    tasksService.add(text, listId)
+  add(listId) {
+    window.event.preventDefault()
+    console.log('Task Service Add', listId)
+    /**@type {HTMLFormElement} */
+    // @ts-ignore
+    const form = window.event.target
+    const taskData = {
+      listId,
+      taskName: form.taskName.value
+    }
+    console.log('Task Controller Add', taskData)
+    tasksService.add(taskData)
   }
 }
 

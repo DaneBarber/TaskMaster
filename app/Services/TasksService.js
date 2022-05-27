@@ -6,8 +6,7 @@ class TasksService {
     ProxyState.tasks = ProxyState.tasks.filter(t => t.taskId !== taskId)
   }
   add(taskData) {
-    let task = new Task(taskData)
-    ProxyState.tasks = [...ProxyState.tasks, task]
+    ProxyState.tasks = [...ProxyState.tasks, new Task(taskData)]
   }
 }
 
