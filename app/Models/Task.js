@@ -19,7 +19,7 @@ export class Task {
     return /*html*/`
           <li>
             <span><input  type="checkbox" class="p-1" ${this.taskChecked == "true" ? "checked" : ""}> ${this.taskName}</span>
-            <span class="mdi mdi-trash-can-outline text-danger" onclick="app.tasksController.deleteTask('${this.taskId}')"></span>
+            <span class="mdi mdi-trash-can-outline text-danger" onclick="app.tasksController.remove('${this.taskId}')"></span>
           </li>
     `
 

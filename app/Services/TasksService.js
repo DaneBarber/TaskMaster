@@ -1,10 +1,13 @@
-class TasksService {
-  constructor() {
-    
-  }
+import { ProxyState } from "../AppState.js"
+import { Task } from "../Models/Task.js"
 
-  remove() {
-    // remove a task from the list
+class TasksService {
+  remove(taskId) {
+    ProxyState.tasks = ProxyState.tasks.filter(t => t.taskId !== taskId)
+  }
+  add(taskData) {
+    let task = new Task(taskData)
+    ProxyState.tasks = [...ProxyState.tasks, task]
   }
 }
 

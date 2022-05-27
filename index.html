@@ -18,8 +18,42 @@
   <header class="d-flex justify-content-center">
     <h1>TaskMaster</h1>
   </header>
-  
+
   <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div id="app">
+            <div class="row">
+              <div class="col-6">
+                <form class="input-group mb-3" onsubmit="app.listsController.add()">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="List Name..." id="listName" name="listName"
+                      minlength="3" maxlength="15">
+                    <div class="ms-3">
+                      <select class="form-select" name="listColor" for="listColor" id="listColor" required>
+                        <option selected disabled>Choose Your Color</option>
+                        <option>red</option>
+                        <option>grey</option>
+                        <option>yellow</option>
+                        <option>pink</option>
+                        <option>green</option>
+                      </select>
+                    </div>
+                    <button class="btn btn-success" type="submit">Create your list</button>
+                  </div>
+                </form>
+
+              </div>
+              <div class="row justify-content-around" id="lists">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  <!-- <main>
     <section>
       <form action="">
         <input type="text">
@@ -72,7 +106,7 @@
         </div>
       </div>
     </section>
-  </main>
+  </main> -->
 
   <footer>
     Made by Dane & Annika

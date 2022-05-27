@@ -1,10 +1,15 @@
-class ListsService {
-  constructor() {
-    
-  }
+import { ProxyState } from "../AppState.js"
+import { List } from "../Models/List.js"
 
-  remove() {
-    // remove a list
+class ListsService {
+
+  add(title, color) {
+    console.log(title, color, "in the listService")
+    const list = new List(title)
+    ProxyState.lists = [...ProxyState.lists, list]
+  }
+  remove(id) {
+    ProxyState.lists = ProxyState.lists.filter(l => l.listId !== id)
   }
 }
 
